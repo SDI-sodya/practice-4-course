@@ -1,4 +1,4 @@
-import {router} from './router.js';
+import { router } from './router.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   const main = {
@@ -13,16 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     },
     watch: {
-
+      $route:function(){}
     },
-    mounter:function() {
-
-    },
-    methods: {
-      init() {
-
-      }
-    }
+    mounter:function() {},
+    methods: {}
   };
 
   var app = Vue.createApp(main)

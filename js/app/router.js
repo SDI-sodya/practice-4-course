@@ -2,8 +2,8 @@ import { login } from './pages/login.js';
 
 
 export const router = VueRouter.createRouter({
-  history: VuewRoter.createWebHashHistory(),
-  routers:[
+  history: VueRouter.createWebHashHistory(),
+  routes:[
     { path:'/', name: 'Sign in', component: login }
   ]
 })
