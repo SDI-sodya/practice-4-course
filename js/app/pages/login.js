@@ -38,7 +38,7 @@ export const login = {
   `<div class="flex">
     <msg ref="msg"/>
     <div id="left-area" class="w60">
-      <img :src="parent.url+'/js/app/views/images/Cover_'+img+'.jpg'" />
+      <img :src="parent.url+'/app/views/images/Cover_'+img+'.jpg'" />
     </div>
     <div id="right-area" class="w40">
       <div class="header">
@@ -47,7 +47,7 @@ export const login = {
             <h1>Affiliate Sign in</h1>
           </div>
           <div class="w40 logo">
-            <img :src="parent.url+'/js/app/views/images/favicon.ico'" />
+            <img :src="parent.url+'/app/views/images/logo.svg'" />
           </div>
         </div>
       </div>

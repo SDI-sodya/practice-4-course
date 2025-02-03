@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const main = {
     data() {
       return {
-        url:"",
+        url:"https://affiliate.yanbasok.com",
         user: {name:"", phone:"", email:"", date:"", auth:""},
         formData: {},
         title: "",
