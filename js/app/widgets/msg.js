@@ -6,7 +6,9 @@ export const msg = {
       t1:'',
       t2:'',
       code:0,
-      interval:''
+      interval:'',
+      confirmTitle: '',
+      confirm: '',
     }
   },
   watch: {},
@@ -95,7 +97,7 @@ export const msg = {
   <popup ref="confirm" :title="confirmTitle"> 
     <div class="al">
       <div class="ab1">
-      {{confirm}}  <i class="fas fa-info-circle"></i> 
+        {{confirm}}  <i class="fas fa-info-circle"></i> 
       </div>
       <div class="botBtns"> 
         <a class="btnS" href="#" @click.prevent="code=1">Yes</a> 
