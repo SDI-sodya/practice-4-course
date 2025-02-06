@@ -3,6 +3,7 @@ import { msg } from './widgets/msg.js';
 import { header } from './widgets/header.js';
 import { popup } from './widgets/popup.js';
 import { toogle } from './widgets/toogle.js';
+import { img } from './widgets/img.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   const main = {
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   var app = Vue.createApp(main)
+  .component('Image', img)
   .component('Header', header)
   .component('toogle', toogle)
   .component('msg',msg)

@@ -356,7 +356,7 @@ header {
   z-index: 1000;
   max-width: 700px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 100vh;
 }
 
 .head-popup {
@@ -393,7 +393,7 @@ header {
   margin-left: 20px;
 }
 
-.btnS {
+.btnS, .btnSS {
   padding: 10px 15px;
   background-color: var(--active);
   color: #ffffff;
@@ -405,7 +405,13 @@ header {
   margin-right: 10px;
 }
 
-.btnS:hover {
+.btnS {
+  gap: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.btnS:hover, .btnSS:hover {
   background-color: #1b6f82;
   color: #ffffff;
 }
@@ -485,7 +491,7 @@ input[type="date"] {
   padding: 10px 15px;
   font-family: sans-serif;
   font-size: 15px;
-  background-color: transparent;
+  background-color: #f3f7fd;
   border: 1px solid #cacaca;
   border-radius: 10px;
 }
@@ -511,13 +517,13 @@ a:hover {
   color: var(--active);
 }
 
-table {
+.t-f table {
   border-collapse: collapse;
   width: 100%;
   direction: rtl;
 }
 
-th {
+.t-f th {
   background-color: #ffffff;
   padding: 10px;
   border-bottom: 1px solid var(--white-border);
@@ -525,44 +531,121 @@ th {
   text-decoration: none;
 }
 
-th:first-child {
+.t-f th:first-child {
   border-top: 1px solid var(--white-border);
   border-right: 1px solid var(--white-border);
 }
 
-th:last-child {
+.t-f th:last-child {
   border-left: 1px solid var(--white-border);
 }
 
-td {
+.t-f td {
   padding: 10px;
   border: 1px solid var(--white-border);
   color: #42454b;
   text-decoration: none;
 }
 
-tr:nth-child(odd) {
+.t-f tr:nth-child(odd) {
   background-color: #f3f3f3;
 }
 
-tr:nth-child(even) {
+.t-f tr:nth-child(even) {
   background-color: #ffffff;
 }
 
-th:nth-child(3),
-td:nth-child(3) {
+.t-f th:nth-child(3),
+.t-f td:nth-child(3) {
   width: 55%;
   text-align: right;
 }
 
-th.id,
-td.id {
+.t-f th.id,
+.t-f td.id {
   width: 5%;
 }
 
-th.actions,
-td.actions {
+.t-f th.actions,
+.t-f td.actions {
   width: 10%;
+}
+
+.t-s table {
+  border-collapse: collapse;
+  width: 100%;
+  direction: rtl;
+}
+
+.t-s th {
+  background-color: #ffffff;
+  padding: 10px;
+  border-bottom: 1px solid #e4e7e7;
+  border-top: 1px solid #e4e7e7;
+  text-decoration: none;
+  text-align: right;
+}
+
+.t-s th:first-child {
+  border-top: 1px solid#e4e7e7;
+  border-right: 1px solid#e4e7e7;
+}
+
+.t-s th:last-child {
+  border-left: 1px solid#e4e7e7;
+}
+
+.t-s td {
+  padding: 10px;
+  border: 1px solid #e4e7e7;
+  color: rgb(66, 69, 75);
+  text-decoration: none;
+}
+
+.t-s tr:nth-child(odd) {
+  background-color: rgb(243 243 243);
+}
+
+.t-s tr:nth-child(even) {
+  background-color: rgb(255, 255, 255);
+}
+
+.t-s th:nth-child(5),
+.t-s td:nth-child(5) {
+  width: 40%;
+  text-align: right;
+}
+
+.t-s th.id,
+.t-s td.id {
+  width: 5%;
+  text-align: center;
+}
+
+.t-s th.image,
+.t-s td.image {
+  width: 10%;
+}
+
+.t-s th.actions,
+.t-s td.actions {
+  width: 15%;
+  text-align: center;
+}
+
+.banner-img {
+  max-width: 80px;
+  height: 100%;
+  filter: brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.banner-img:hover {
+  filter: brightness(1);
+}
+
+.actions a + a {
+  padding-right: 10px;
 }
 
 /* Switch and Slider */
@@ -680,4 +763,218 @@ button.btn:hover {
   border-color: #007bff;
   box-shadow: 0 0 5px #007bff80;
   outline: none;
+}
+
+.rows select {
+  text-align: right;
+  background-color: rgb(243, 247, 253);
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 87%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.empty {
+  text-align: right;
+}
+
+.panelTop {
+  background-color: #d5f3ec;
+}
+
+.flexs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.w30.ptb30 {
+  text-align: right;
+}
+
+.w2O.a1.ptb2O {
+  text-align: left;
+}
+
+.flex.panels {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.w30.ptb25 {
+  text-align: right;
+  width: 30%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.w70.a1 {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.flex.cubes {
+  width: 97%;
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  margin-left: auto;
+}
+
+.w30.clicks {
+  width: 30%;
+  background-color: rgb(0, 78, 147);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 15px;
+  text-align: right;
+}
+
+.w30.views {
+  width: 30%;
+  background-color: rgb(71, 0, 174);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 15px;
+  text-align: right;
+}
+
+.w30.leads {
+  width: 30%;
+  background-color: rgb(49, 146, 1);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 15px;
+  text-align: right;
+}
+
+.w30.ctr {
+  width: 30%;
+  background-color: rgb(254, 254, 254);
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 15px;
+  text-align: right;
+}
+
+.flex.body {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.w30.ar.filchart {
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: rgb(246, 246, 245);
+  margin-right: 20px;
+  padding-top: 15px;
+  padding-right: 10px;
+  font-size: 19px;
+}
+
+.itemchart.ptb10 {
+  gap: 6px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#chartOuter {
+  margin-left: 20px;
+  width: 70%;
+  height: 100vh;
+  position: relative;
+}
+
+#chartHints {
+  font-size: 18px;
+  margin-top: 80px;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.chartHintsViews {
+  position: absolute;
+  top: -25px;
+  left: 5px;
+  color: black;
+  font-weight: bold;
+}
+
+.chartHintsClicks {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  color: black;
+  font-weight: bold;
+}
+
+.myChart {
+  width: 105%;
+  height: 100%;
+}
+
+.w30.clicks,
+.w30.views,
+.w30.leads,
+.w30.ctr {
+  font-size: 36px;
+}
+
+.w30.clicks > div,
+.w30.views > div,
+.w30.leads > div,
+.w30.ctr > div {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.image-preview-area {
+  height: 130px;
+  width: 86%;
+  border: 1px solid #e3e3e3;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.im {
+  height: 50px;  
+  width: auto; 
+  object-fit: cover;
+}
+
+.im.new-image {
+  padding-top: 3px;
+  height: 130px; 
+}
+
+.file-input {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 10px;
 }
