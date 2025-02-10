@@ -409,8 +409,9 @@ export const campaign = {
             </div>
             <div class="rows">
               <label class="custom-label">Type</label>
+              <i class="select-icon fas fa-chevron-down"></i>
               <select v-model="parent.formData.type" required>
-                <option value="0"></option>
+                <option value="0">---</option>
                 <option 
                   v-if="data.types" 
                   v-for="c in data.types" 

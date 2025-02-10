@@ -1,6 +1,6 @@
 export const campaigns = {
-  data:function() {
-    return {
+	data: function () {
+		return {
 			parent: '',
 			data: {},
 			details: {},
@@ -14,8 +14,8 @@ export const campaigns = {
 			type: 0,
 			all: true,
 		};
-  },
-  mounted: function () {
+	},
+	mounted: function () {
 		this.parent = this.$parent.$parent;
 		if (!this.parent.user) {
 			this.parent.logout();
@@ -23,8 +23,8 @@ export const campaigns = {
 		this.get();
 		this.GetFirstAndLastDate();
 	},
-  methods:{
-    GetFirstAndLastDate: function () {
+	methods: {
+		GetFirstAndLastDate: function () {
 			var year = new Date().getFullYear();
 			var month = new Date().getMonth();
 			var firstDayOfMonth = new Date(year, month, 2);
@@ -33,7 +33,7 @@ export const campaigns = {
 			this.date = firstDayOfMonth.toISOString().substring(0, 10);
 			this.date2 = lastDayOfMonth.toISOString().substring(0, 10);
 		},
-    get: function () {
+		get: function () {
 			var self = this;
 			var data = self.parent.toFormData(self.parent.formData);
 			if (this.date !== '') data.append('date', this.date);
@@ -47,20 +47,28 @@ export const campaigns = {
 				.then(function (response) {
 					self.data = response.data;
 					self.loader = 0;
+					if (self.iChart != -1) self.line(self.data.items[self.iChart]);
 				})
 				.catch(function (error) {
 					self.parent.logout();
 				});
 		},
-    action: function () {
+		action: function () {
 			var self = this;
 			self.parent.formData.copy = '';
 			var data = self.parent.toFormData(self.parent.formData);
 			axios
-				.post(this.parent.url + '/site/actionCampaign?auth=' + this.parent.user.auth, data)
+				.post(
+					this.parent.url +
+						'/site/actionCampaign?auth=' +
+						this.parent.user.auth,
+					data
+				)
 				.then(function (response) {
 					self.$refs.new.active = 0;
-					if (self.parent.formData.id) {
+					if (response.data.error) {
+						self.$refs.header.$refs.msg.alertFun(response.data.error);
+					} else if (self.parent.formData.id) {
 						self.$refs.header.$refs.msg.successFun(
 							'Successfully updated campaign!'
 						);
@@ -75,14 +83,22 @@ export const campaigns = {
 					console.log('errors: ', error);
 				});
 		},
-    del: async function () {
+		del: async function () {
 			if (
-				await this.$refs.header.$refs.msg.confirmFun( 'Please confirm next action', 'Do you want to delete this campaign?')
+				await this.$refs.header.$refs.msg.confirmFun(
+					'Please confirm next action',
+					'Do you want to delete this campaign?'
+				)
 			) {
 				var self = this;
 				var data = self.parent.toFormData(self.parent.formData);
 				axios
-					.post(this.parent.url + '/site/deleteCampaign?auth=' + this.parent.user.auth, data)
+					.post(
+						this.parent.url +
+							'/site/deleteCampaign?auth=' +
+							this.parent.user.auth,
+						data
+					)
 					.then(function (response) {
 						if (response.data.error) {
 							self.$refs.header.$refs.msg.alertFun(response.data.error);
@@ -211,9 +227,9 @@ export const campaigns = {
 			this.parent.formData = this.data.items[this.iChart];
 			this.get();
 		},
-  },
-  
-  template: `<div class="inside-content">
+	},
+
+	template: `<div class="inside-content">
 	<Header ref="header" />
 	<div id="spinner" v-if="loader"></div>
 	<div class="wrapper">
@@ -411,5 +427,5 @@ export const campaigns = {
 		<div class="empty" v-else>No items</div>
 	</div>
 </div>
-`
+`,
 };
