@@ -82,7 +82,7 @@ header {
 .header .w10 {
   width: 10%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: row-reverse;
 }
 
@@ -627,6 +627,15 @@ a:hover {
   text-align: center;
 }
 
+.t-s th.link,
+.t-s td.link {
+    text-align: right;
+}
+
+.t-s th.images{
+    text-align: center;
+}
+
 .t-s th.image,
 .t-s td.image,
 .t-s th.image1 {
@@ -787,7 +796,7 @@ a:hover {
 }
 
 .form.inner-form {
-  padding: 35px 0;
+  padding: 35px 25px;
 }
 
 .btn {
@@ -1164,9 +1173,15 @@ p {
 }
 
 .ptb10 {
-  font-size: 14px;
-  padding-top: 5px;
+  font-size: 16px;
+  padding-top: 10px;
   padding-bottom: 20px;
+}
+
+.ptb9 {
+  text-align: right;
+  font-size: 14px;
+  padding: 10px 0;
 }
 
 .ac {
@@ -1183,4 +1198,24 @@ p {
 
 .ptb14 {
   display: flex;
+}
+
+.ptb17{
+  font-size: 15px;
+  padding: 17px 0;
+}
+
+.w9{
+  text-align: right;
+  width: 9%;
+}
+
+.w69{
+  width: 70%;
+}
+
+.ptb19 h1{
+  font-size: 22px;
+  padding: 20px 0;
+  color: rgb(66, 69, 75);
 }
