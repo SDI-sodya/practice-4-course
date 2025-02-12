@@ -12,6 +12,9 @@ export const header = {
 		this.parent = this.$parent.$parent.$parent;
 	},
 	methods: {
+    burgerMenu() {
+      this.menu = this.menu === 0 ? 1 : 0;
+    },
 		toogleActive() {
 			this.active = this.active === 1 ? 0 : 1;
 		},
@@ -25,6 +28,7 @@ export const header = {
 				</div>
 				<div class="w70">
             <div id="menu">
+              <i class="fas fa-bars" @click="burgerMenu"></i>
               <ul :class="{ active: menu == 1 }" v-if="parent.user && parent.user.type && parent.user.type == 'admin'">
                 <li v-if="menu == 1" class="a1">
                   <i class="fas fa-times" @click="menu = 0"></i>

@@ -219,7 +219,7 @@ export const campaign = {
 							{
 								label: 'Views',
 								backgroundColor: '#500088',
-								borderColor: '#500088',
+								borderColor: '#5000B8',
 								data: views,
 								yAxisID: 'y2',
 							},
@@ -233,7 +233,7 @@ export const campaign = {
 								usePointStyle: true,
 								callbacks: {
 									title: (ctx) => {
-										return ctx[0].dataset.label;
+										return ctx[0]['dataset'].label;
 									},
 								},
 							},
@@ -276,7 +276,7 @@ export const campaign = {
 
     <div class="panelTop">
       <div class="wrapper">
-        <div class="flexs">
+        <div class="flexsn">
           <div class="w30 ptb30">
             <h1 v-if="data && data.info">{{data.info.title}}</h1>
           </div>
@@ -302,9 +302,9 @@ export const campaign = {
     <popup ref="chart" fullscreen="true" title="Chart">
       <div class="flex panels">
         <div class="w30 ptb25">
-          <input type="date" v-model="date" @change="get();" />
+          <input class="data" type="date" v-model="date" @change="get();" />
           <span style="font-size: 17px; font-weight: bold;"> - </span> 
-          <input type="date" v-model="date2" @change="get()" />
+          <input class="data" type="date" v-model="date2" @change="get()" />
         </div>
         <div class="w70 a1">
           <div class="flex cubes">
